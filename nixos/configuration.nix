@@ -7,20 +7,29 @@
   imports = 
     [
       ./hardware-configuration.nix
-      ./programs/_programs.nix
       ./config/boot.nix
       ./config/hardware.nix
       ./config/i18n.nix
       ./config/nix.nix
       ./desktop/kde.nix
     ];
+  environment.systemPackages = with pkgs; [ vim wget git ];
+  environment.variables.EDITOR = "vim";
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  programs.git = {
+    enable = true;
+    userName = "FrdrCkII";
+    userEmail = "c2h5oc2h4@outlook.com";
+  };
+  networking = {
+    hostName = "Frbspc";
+    networkmanager.enable = true;
+    firewall.enable = true;
+  };
   users.users.Frb = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  networking.hostName = "Frbspc";
   system = {
     stateVersion = "unstable";
     autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";

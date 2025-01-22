@@ -4,7 +4,6 @@
   imports =
     [
       ./input/fcitx5.nix
-      ./services/networkmanager.nix
       ./services/sddm.nix
     ];
   services.desktopManager.plasma6.enable = true;

@@ -2,7 +2,7 @@
   description = "Frederick's NixOS Flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,6 +26,7 @@
               useUserPackages = true;
               useGlobalPkgs = true;
               users.Frb = ./home-manager/home.nix;
+              extraSpecialArgs = inputs;
             };
           }
         ];
