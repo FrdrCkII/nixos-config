@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = inputs@ 
+  outputs = inputs@
   {
     nixpkgs,
     home-manager,
