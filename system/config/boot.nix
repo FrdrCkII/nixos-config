@@ -4,10 +4,8 @@
     enableContainers = false;
     supportedFilesystems = [ "btrfs" "vfat" ];
     loader = {
-      efi = {
-        efiSysMountPoint = "/efi";
-        canTouchEfiVariables = true;
-      };
+      efi.efiSysMountPoint = "/efi";
+      efi.canTouchEfiVariables = true;
       systemd-boot.enable = false;
       grub = {
         enable = true;

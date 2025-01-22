@@ -1,27 +1,16 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, nixpkgs-unstable, ... }:
 {
-  imports = 
-    [
-      ./config/boot.nix
-      ./config/hardware.nix
-      ./config/i18n.nix
-      ./config/nix.nix
-      ./desktop/kde.nix
-
-      ../programs/steam.nix
-      ../programs/lact.nix
-      ../programs/zsh.nix
-    ];
-  environment.systemPackages = with pkgs; [ vim wget git ];
-  environment.variables.EDITOR = "vim";
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  networking = {
-    hostName = "Frbspc";
-    networkmanager.enable = true;
-    firewall.enable = true;
-  };
-  system = {
-    stateVersion = "unstable";
-    autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
-  };
+  imports = [
+    ./config/boot.nix
+    ./config/hardware.nix
+    ./config/i18n.nix
+    ./config/nix.nix
+  ];
+  environment.systemPackages = with nixpkgs-unstable; [ vim wget git ];
+  boot.kernelPackages = nixpkgs-unstable.linuxPackages_zen;
+  networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+  networking.hostName = "FrdrCkII";
+  system.stateVersion = "unstable";
+  system.autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
 }

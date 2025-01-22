@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
@@ -91,4 +91,47 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # swapfile check
+  systemd.services = {
+    create-swapfile = {
+      serviceConfig.Type = "oneshot";
+      wantedBy = [ "swap-swapfile.swap" ];
+      script = ''
+        swapfile="/swap/swapfile"
+        if [[ -f "$swapfile" ]]; then
+          echo "Swap file $swapfile already exists, taking no action"
+        else
+          echo "Setting up swap file $swapfile"
+          ${pkgs.coreutils}/bin/truncate -s 0 "$swapfile"
+        fi
+        ${pkgs.e2fsprogs}/bin/chattr +C "$swapfile"
+        ${pkgs.e2fsprogs}/bin/chattr +C "/var/log"
+        ${pkgs.e2fsprogs}/bin/chattr +C "/var/cache"
+        ${pkgs.e2fsprogs}/bin/chattr +C "/var/tmp"
+      '';
+    };
+  };
+
+  # S4
+  # sudo btrfs inspect-internal map-swapfile -r /swap/swapfile
+  boot.kernelParams = ["resume_offset=533760"];
+  boot.resumeDevice = "/dev/disk/by-uuid/60417b11-7d0f-4bc7-a3c1-b4ffc5f10d57";
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
+    fileSystems = [ "/" "/data" ];
+  };
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        mesa
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        mesa
+      ];
+    };
+  };
 }
