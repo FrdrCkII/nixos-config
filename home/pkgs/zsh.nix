@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  home.packages = with pkgs; [ zsh-powerlevel10k ];
-  home.shells = with pkgs; [ zsh ];
+  home.packages = with pkgs; [ zsh zsh-powerlevel10k ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
