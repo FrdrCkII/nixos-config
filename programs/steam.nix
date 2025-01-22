@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     steam-run
     gamescope
     mangohud
