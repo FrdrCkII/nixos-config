@@ -16,37 +16,37 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f1699d4d-76df-4078-b6f6-5200d134bf87";
       fsType = "btrfs";
-      options = [ "subvol=@root" ];
+      options = [ "subvol=@root" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/f1699d4d-76df-4078-b6f6-5200d134bf87";
       fsType = "btrfs";
-      options = [ "subvol=@nix" ];
+      options = [ "subvol=@nix" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
   fileSystems."/nix/store" =
     { device = "/dev/disk/by-uuid/f1699d4d-76df-4078-b6f6-5200d134bf87";
       fsType = "btrfs";
-      options = [ "subvol=@nix/store" ];
+      options = [ "subvol=@nix/store" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
   fileSystems."/nix/var" =
     { device = "/dev/disk/by-uuid/f1699d4d-76df-4078-b6f6-5200d134bf87";
       fsType = "btrfs";
-      options = [ "subvol=@nix/var" ];
+      options = [ "subvol=@nix/var" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/f1699d4d-76df-4078-b6f6-5200d134bf87";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ "subvol=@home" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
   fileSystems."/swap" =
     { device = "/dev/disk/by-uuid/f1699d4d-76df-4078-b6f6-5200d134bf87";
       fsType = "btrfs";
-      options = [ "subvol=@swap" ];
+      options = [ "subvol=@swap" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
   fileSystems."/efi" =
@@ -58,10 +58,10 @@
   fileSystems."/data" =
     { device = "/dev/disk/by-uuid/8bdbb302-76d7-40b7-8360-13fc04923381";
       fsType = "btrfs";
-      options = [ "subvol=@data" ];
+      options = [ "subvol=@data" "noatime" "autodefrag" "compress=zstd:15" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [{ device = "/swap/swapfile"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

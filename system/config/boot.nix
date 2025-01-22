@@ -2,17 +2,19 @@
 {
   boot = {
     enableContainers = false;
-    supportedFilesystems = [ "btrfs" "vfat" ];
+    supportedFilesystems = {
+      btrfs = true;
+      zfs = lib.mkForce false;
+    };
     loader = {
       efi.efiSysMountPoint = "/efi";
       efi.canTouchEfiVariables = true;
-      systemd-boot.enable = false;
       grub = {
         enable = true;
-        configurationName = "NixOS";
         device = "nodev";
         efiSupport = true;
         gfxmodeEfi = "1366x768";
+        configurationName = "NixOS";
       };
     };
   };
