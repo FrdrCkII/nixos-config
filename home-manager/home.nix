@@ -23,5 +23,4 @@
     wechat-uos
     netease-cloud-music-gtk
   ];
-
 }
