@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 {
   time.timeZone = "Asia/Shanghai";
-  i18n.defaultLocale = "zh_CN.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "zh_CN.UTF-8";
-    LC_IDENTIFICATIOON = "zh_CN.UTF-8";
+    LC_IDENTIFICATION = "zh_CN.UTF-8";
     LC_MEASUREMENT = "zh_CN.UTF-8";
     LC_MONETARY = "zh_CN.UTF-8";
     LC_NAME = "zh_CN.UTF-8";
@@ -13,24 +13,22 @@
     LC_TELEPHONE = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
   };
-
   fonts = lib.mkForce {
     enableDefaultPackages = false;
     fontconfig.enable = true;
     fontDir.enable = true;
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      font-awesome
-      sarasa-gothic
-      twemoji-color-font
+      noto-fonts-cjk
+      noto-fonts-emoji
+      material-design-icons
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
     fontconfig.defaultFonts = {
-      serif = [ "Sarasa Gothic Sc regular" ];
-      sansSerif = [ "Sarasa Gothic Sc regular" ];
-      monospace = [ "Sarasa Mono SC" ];
-      emoji = [ "Twitter Color Emoji Regular" ];
+      serif = ["Noto Serif" "Noto Color Emoji"];
+      sansSerif = ["Noto Sans" "Noto Color Emoji"];
+      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      emoji = ["Noto Color Emoji"];
     };
   };
 }
