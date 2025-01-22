@@ -39,6 +39,7 @@
           ./system/system.nix
           ./system/user.nix
           ./programs/steam.nix
+          ./programs/lact.nix
           ./programs/zsh.nix
           home-manager.nixosModules.home-manager
           {

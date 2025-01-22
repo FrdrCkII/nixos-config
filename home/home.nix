@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports =
-    [
-      ./pkgs/lact.nix
-    ];
   home.username = "Frb";
   home.homeDirectory = "/home/Frb";
   home.stateVersion = "25.05";
