@@ -7,6 +7,10 @@
       ./config/i18n.nix
       ./config/nix.nix
       ./desktop/kde.nix
+
+      ../programs/steam.nix
+      ../programs/lact.nix
+      ../programs/zsh.nix
     ];
   environment.systemPackages = with pkgs; [ vim wget git ];
   environment.variables.EDITOR = "vim";
