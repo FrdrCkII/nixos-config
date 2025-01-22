@@ -1,8 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [ zsh-powerlevel10k ];
-  environment.shells = with pkgs; [ zsh ];
-  users.defaultUserShell = pkgs.zsh;
+  home.shells = with pkgs; [ zsh ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;

@@ -3,9 +3,7 @@
   imports =
     [
       ./pkgs/lact.nix
-      ./pkgs/steam.nix
       ./pkgs/zsh.nix
-      ./systemd/caddy-steam.nix
     ];
   home.username = "Frb";
   home.homeDirectory = "/home/Frb";

@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   systemd.services = {
-    caddy-steam = {
+    steam-caddy = {
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       description = "Steam & Github Reverse Proxy";
