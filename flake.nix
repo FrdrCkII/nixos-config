@@ -39,7 +39,7 @@
           ./system/system.nix
           ./system/user.nix
           ./programs/steam.nix
-          ./programs/steam-caddy.nix
+          ./programs/zsh.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {

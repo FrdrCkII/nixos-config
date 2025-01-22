@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 {
+  imports = 
+    [
+      ./steam-caddy.nix
+    ];
   environment.systemPackages = with pkgs; [
     steam-run
     gamescope

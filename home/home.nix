@@ -3,7 +3,6 @@
   imports =
     [
       ./pkgs/lact.nix
-      ./pkgs/zsh.nix
     ];
   home.username = "Frb";
   home.homeDirectory = "/home/Frb";
