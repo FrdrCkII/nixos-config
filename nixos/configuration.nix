@@ -20,6 +20,7 @@
     packages = with pkgs; [];
   };
   boot.kernelPackages = pkgs.linuxPackages_zen;
+  networking.hostName = "Frbspc";
   system = {
     stateVersion = "unstable";
     autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
