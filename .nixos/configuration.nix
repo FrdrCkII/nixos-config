@@ -7,6 +7,7 @@
     ./config/i18n.nix
     ./config/kde.nix
     ./config/nix.nix
+    ./config/pkgs.nix
   ];
   environment.systemPackages = with pkgs; [ vim wget git ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
