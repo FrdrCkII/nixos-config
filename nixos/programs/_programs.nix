@@ -18,4 +18,5 @@
     unrar
     p7zip
   ];
+  environment.variables.EDITOR = "vim";
 }
