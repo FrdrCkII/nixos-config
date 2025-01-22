@@ -35,9 +35,7 @@
           };
         };
         modules = [
-          ./nixos/hardware-configuration.nix
           ./system/system.nix
-          ./system/user.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
