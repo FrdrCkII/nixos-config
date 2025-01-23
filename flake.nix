@@ -39,14 +39,14 @@
       nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
-          ./users/${username}/nixos.nix
+          ./flake/_${username}/nixos.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = inputs // specialArgs;
-              users.${username} = import ./users/${username}/home.nix;
+              users.${username} = import ./flake/_${username}/home.nix;
             };
           }
         ];
