@@ -1,9 +1,8 @@
 { config, pkgs, lib, username, ... }:
 {
   environment.systemPackages = with pkgs; [ zsh-powerlevel10k ];
-  environment.shells = with pkgs; [ zsh ];
   environment.pathsToLink = [ "/share/zsh" ];
-  users.users.${username}.shell = zsh;
+  users.users.${username}.shell = [ pkgs.zsh ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
