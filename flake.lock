@@ -3,7 +3,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "pkgs"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -20,7 +20,7 @@
         "type": "github"
       }
     },
-    "pkgs": {
+    "nixpkgs": {
       "locked": {
         "lastModified": 1737469691,
         "narHash": "sha256-nmKOgAU48S41dTPIXAq0AHZSehWUn6ZPrUKijHAMmIk=",
@@ -36,7 +36,7 @@
         "type": "github"
       }
     },
-    "pkgs-stable": {
+    "nixpkgs-stable": {
       "locked": {
         "lastModified": 1737404927,
         "narHash": "sha256-e1WgPJpIYbOuokjgylcsuoEUCB4Jl2rQXa2LUD6XAG8=",
@@ -55,8 +55,8 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "pkgs": "pkgs",
-        "pkgs-stable": "pkgs-stable"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable"
       }
     }
   },
