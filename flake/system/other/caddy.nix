@@ -11,7 +11,7 @@
       description = "Steam & Github Reverse Proxy";
       serviceConfig = {
         WorkingDirectory = "/data/.tools/steamcommunity_302/";
-        ExecStart = ''${pkgs.caddy}/bin/caddy run --config steamcommunity_302.caddy.json --adapter caddyfile'';
+        ExecStart = ''${pkgs.caddy}/bin/caddy run --config /data/.tools/steamcommunity_302/steamcommunity_302.caddy.json --adapter caddyfile'';
         Restart = ''on-failure'';
       };
     };
