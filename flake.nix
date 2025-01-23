@@ -2,8 +2,8 @@
   description = "Frederick's NixOS Flake";
 
   inputs = {
-    pkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    pkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "pkgs";
   };
@@ -11,8 +11,8 @@
   outputs = inputs@
   {
     self,
-    pkgs,
-    pkgs-stable,
+    nixpkgs,
+    nixpkgs-stable,
     home-manager,
     ...
   }:
@@ -23,11 +23,21 @@
     nixosConfigurations = {
       FrdrCkII = 
       let
+        inherit system;
         username = "FrdrCkII";
-        specialArgs = {inherit username;};
+        specialArgs = {
+          inherit username;
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
       in
         pkgs.lib.nixosSystem {
-          inherit system;
           inherit specialArgs;
           modules = [
             ./users/${username}/nixos.nix

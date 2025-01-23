@@ -1,4 +1,4 @@
-{ config, lib, nixpkgs-unstable, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports = [
     .../system/system.nix

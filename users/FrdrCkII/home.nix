@@ -1,9 +1,9 @@
-{ config, nixpkgs-unstable, ... }:
+{ config, pkgs, ... }:
 {
-  home.username = "Frb";
-  home.homeDirectory = "/home/Frb";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "25.05";
-  home.packages = with nixpkgs-unstable; [
+  home.packages = with pkgs; [
     yazi fastfetch
     zip unzip p7zip
     vscode
