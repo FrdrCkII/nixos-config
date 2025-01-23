@@ -37,21 +37,21 @@
           };
         };
       in
-        nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          modules = [
-            ./users/${username}/nixos.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = inputs // specialArgs;
-                users.${username} = import ./users/${username}/home.nix;
-              };
-            }
-          ];
-        };
+      nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          ./users/${username}/nixos.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = inputs // specialArgs;
+              users.${username} = import ./users/${username}/home.nix;
+            };
+          }
+        ];
+      };
     };
   };
 }
