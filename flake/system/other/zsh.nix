@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [ zsh-powerlevel10k ];
   environment.pathsToLink = [ "/share/zsh" ];
+  environment.shells = with pkgs; [ zsh ];
   users.users.${username}.shell = pkgs.zsh;
   programs.zsh = {
     enable = true;
