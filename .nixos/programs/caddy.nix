@@ -7,12 +7,18 @@
       description = "Steam & Github Reverse Proxy";
       serviceConfig = {
         WorkingDirectory = "/data/.tools/steamcommunity_302/";
-        ExecStart = ''/data/.tools/steamcommunity_302/caddy run --config /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity_302.caddy.json --adapter caddyfile'';
+        ExecStart = ''/data/.tools/steamcommunity_302/caddy run --config steamcommunity_302.caddy.json --adapter caddyfile'';
+        Restart = ''on-failure'';
       };
     };
   };
   security.pki.certificateFiles = [
-    /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunityCA.pem
+    /data/.tools/steamcommunity_302/steamcommunity.cnf
+    /data/.tools/steamcommunity_302/steamcommunity.crt
+    /data/.tools/steamcommunity_302/steamcommunity.csr
+    /data/.tools/steamcommunity_302/steamcommunity.key
+    /data/.tools/steamcommunity_302/steamcommunityCA.key
+    /data/.tools/steamcommunity_302/steamcommunityCA.pem
   ];
   networking.extraHosts = ''
     127.0.0.1 steamcommunity.com
