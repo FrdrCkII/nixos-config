@@ -26,7 +26,7 @@
         username = "FrdrCkII";
         specialArgs = {inherit username;};
       in
-        nixpkgs.lib.nixosSystem {
+        pkgs.lib.nixosSystem {
           inherit system;
           inherit specialArgs;
           modules = [
