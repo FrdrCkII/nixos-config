@@ -10,7 +10,6 @@
     ./config/nix.nix
     ./other/amdgpu.nix
     ./other/caddy.nix
-    ./other/caddy-stable.nix
     ./other/clash.nix
     ./other/steam.nix
     ./other/zsh.nix
