@@ -12,6 +12,7 @@
     LC_PAPER = "zh_CN.UTF-8";
     LC_TELEPHONE = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
+    LC_ALL = "zh_CN.UTF-8";
   };
   fonts = lib.mkForce {
     enableDefaultPackages = false;
