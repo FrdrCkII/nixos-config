@@ -2,8 +2,7 @@
 {
   imports = [
     ../home/core.nix
-    ../home/programs/lact.nix
-    ../home/programs/zsh.nix
+    ../home/config/zsh.nix
   ];
   programs.git = {
     enable = true;
