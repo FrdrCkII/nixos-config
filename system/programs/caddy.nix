@@ -1,13 +1,14 @@
 { config, lib, pkgs, ... }:
 {
   systemd.services = {
-    steam-caddy = {
+    caddy = {
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       description = "Steam & Github Reverse Proxy";
       serviceConfig = {
         WorkingDirectory = "/data/.tools/steamcommunity_302/";
-        ExecStart = ''/data/.tools/steamcommunity_302/caddy run --config /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity_302.caddy.json --adapter caddyfile'';
+        ExecStart = ''./caddy run --config ./SteamDeck_302/steamcommunity_302.caddy.json --adapter caddyfile'';
+        Restart = ''on-failure'';
       };
     };
   };
