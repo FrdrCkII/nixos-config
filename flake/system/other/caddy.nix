@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 {
+  services.caddy = {
+    enable = true;
+    user = "${username}";
+  };
   systemd.services = {
     caddy = {
       wantedBy = [ "multi-user.target" ];
