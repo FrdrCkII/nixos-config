@@ -3,7 +3,7 @@
   services.nginx = {
     enable = true;
     package = [ pkgs.nginx ];
-    services.nginx.config = ''
+    config = ''
       server {
         listen localhost:443 ssl;# 监听localhost的443端口
         # 添加要监听的域名,与Hosts文件里的域名一致
