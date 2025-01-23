@@ -8,6 +8,7 @@
     packages = with pkgs; [
       yazi fastfetch
       zip unzip p7zip
+      lact zsh
       vscode
       microsoft-edge
       thunderbird
