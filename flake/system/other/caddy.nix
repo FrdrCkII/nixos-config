@@ -12,7 +12,7 @@
   services.caddy = {
     enable = true;
     user = "${username}";
-    configFile = ''/data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity_302.caddy.json'';
+    configFile = "/data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity_302.caddy.json";
   };
   networking.extraHosts = ''
     127.0.0.1 steamcommunity.com
