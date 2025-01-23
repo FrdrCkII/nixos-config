@@ -2,7 +2,6 @@
 {
   services.nginx = {
     enable = true;
-    package = [ pkgs.nginx ];
     config = ''
       server {
         listen localhost:443 ssl;# 监听localhost的443端口
