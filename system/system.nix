@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nixpkgs-unstable, ... }:
+{ config, lib, pkgs, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -9,8 +9,8 @@
     ./config/kde.nix
     ./config/nix.nix
   ];
-  environment.systemPackages = with nixpkgs-unstable; [ vim wget git ];
-  boot.kernelPackages = nixpkgs-unstable.linuxPackages_zen;
+  environment.systemPackages = with pkgs; [ vim wget git ];
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
   networking.hostName = "FrdrCkII";
