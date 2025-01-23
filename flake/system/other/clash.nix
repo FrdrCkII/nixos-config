@@ -4,6 +4,5 @@
     enable = true;
     package = "pkgs.clash-verge-rev";
     autoStart = true;
-    tunMode = true;
   };
 }
