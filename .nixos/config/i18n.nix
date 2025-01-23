@@ -22,7 +22,8 @@
       noto-fonts-emoji
       noto-fonts-cjk-sans
       material-design-icons
-      nerdfonts
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
     ];
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];

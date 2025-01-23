@@ -4,8 +4,4 @@
     microsoft-edge
     vscode
   ];
-  programs.firefox = {
-    enable = true;
-    languagePacks = [ "zh-CN" ];
-  };
 }
