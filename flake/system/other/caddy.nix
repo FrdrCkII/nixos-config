@@ -12,7 +12,7 @@
   services.caddy = {
     enable = true;
     user = "${username}";
-    configFile = ''
+    extraConfig = ''
       {
       #Export From SteamCommunity302
       admin off
