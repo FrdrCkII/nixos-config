@@ -1,7 +1,7 @@
 { config, lib, pkgs, username, ... }:
 {
   imports = [
-    .../system/system.nix
+    ../system/system.nix
   ];
   users.users.${username} = {
     isNormalUser = true;
