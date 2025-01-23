@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./steam-caddy.nix
     ./config/boot.nix
     ./config/filesystem.nix
     ./config/hardware.nix
