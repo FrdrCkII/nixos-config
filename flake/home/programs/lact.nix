@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ lact ];
+  home.Packages = with pkgs; [ lact ];
   systemd.services = {
     lactd = {
       wantedBy = [ "multi-user.target" ];

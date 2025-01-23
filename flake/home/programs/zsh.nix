@@ -1,25 +1,22 @@
 { config, pkgs, lib, ... }:
 {
-  environment.systemPackages = with pkgs; [ zsh-powerlevel10k ];
+  home.Packages = with pkgs; [ zimfw ];
   environment.shells = with pkgs; [ zsh ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-
-    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-
-    shellAliases = {
-      nixos-test = "sudo nixos-rebuild test --flake 'github:FrdrCkII/nixos-config#Frbspc' --impure";
-      nixos-switch = "sudo nixos-rebuild switch --flake 'github:FrdrCkII/nixos-config#Frbspc' --impure";
-      nixos-update = "sudo nixos-rebuild switch --flake 'github:FrdrCkII/nixos-config#Frbspc' --impure --upgrade";
-    };
-    
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
+      plugins = [
+        {
+          name = "zimfw";
+          # src = pkgs.fetchFromGitHub {
+          #   owner = "marlonrichert";
+          #   repo = "zsh-autocomplete";
+          #   rev = "23.07.13";
+          #   sha256 = "sha256-/6V6IHwB5p0GT1u5SAiUa20LjFDSrMo731jFBq/bnpw=";
+          # };
+        }
+      ]
   };
 }
