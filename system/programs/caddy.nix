@@ -13,9 +13,7 @@
     };
   };
   security.pki.certificateFiles = [
-    /data/.tools/steamcommunity_302/steamcommunity.cnf
     /data/.tools/steamcommunity_302/steamcommunity.crt
-    /data/.tools/steamcommunity_302/steamcommunity.csr
     /data/.tools/steamcommunity_302/steamcommunity.key
     /data/.tools/steamcommunity_302/steamcommunityCA.key
     /data/.tools/steamcommunity_302/steamcommunityCA.pem
