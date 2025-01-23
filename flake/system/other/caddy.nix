@@ -1,9 +1,12 @@
 { config, lib, pkgs, username, ... }:
 {
-  services.caddy = {
-    enable = true;
-    user = "${username}";
-  };
+  # services.caddy = {
+  #   enable = true;
+  #   user = "${username}";
+  # };
+  environment.systemPackages = [
+    pkgs.caddy
+  ];
   systemd.services = {
     caddy = {
       wantedBy = [ "multi-user.target" ];
