@@ -3,16 +3,23 @@
   environment.systemPackages = [
     pkgs.caddy
   ];
+  systemd.services = {
+    caddy = {
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network.target" ];
+      description = "Steam & Github Reverse Proxy";
+      serviceConfig = {
+        WorkingDirectory = "/data/.tools/steamcommunity_302/SteamDeck_302/";
+        ExecStart = ''${pkgs.caddy}/bin/caddy run --config /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity_302.caddy.json --adapter caddyfile'';
+        Restart = ''on-failure'';
+      };
+    };
+  };
   security.pki.certificateFiles = [
     /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity.crt
     /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity.key
     /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunityCA.pem
   ];
-  services.caddy = {
-    enable = true;
-    user = "${username}";
-    configFile = "/data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity_302.caddy.json";
-  };
   networking.extraHosts = ''
     127.0.0.1 steamcommunity.com
     127.0.0.1 www.steamcommunity.com
