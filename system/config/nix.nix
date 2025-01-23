@@ -4,9 +4,9 @@
     allowUnfree = true;
   };
   gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+    automatic = lib.mkDefault true;
+    dates = lib.mkDefault "weekly";
+    options = lib.mkDefault "--delete-older-than 7d";
   };
   nix.settings = {
     auto-optimise-store = true;
