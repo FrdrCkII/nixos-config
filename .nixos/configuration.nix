@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ./programs/caddy.nix
-    # ./programs/nginx.nix
     ./programs/steam.nix
     ./config/boot.nix
     ./config/filesystem.nix
