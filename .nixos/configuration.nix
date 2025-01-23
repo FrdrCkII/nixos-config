@@ -2,14 +2,15 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./programs/caddy.nix
+    # ./programs/nginx.nix
+    ./programs/steam.nix
     ./config/boot.nix
     ./config/hardware.nix
     ./config/i18n.nix
     ./config/kde.nix
     ./config/nix.nix
     ./config/pkgs.nix
-
-    ./steam-caddy.nix
   ];
   environment.systemPackages = with pkgs; [ vim wget git ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
