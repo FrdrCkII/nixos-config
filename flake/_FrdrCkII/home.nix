@@ -1,7 +1,9 @@
-{ config, lib, pkgs, username, ... }:
+{ username, ... }:
 {
   imports = [
     ../home/core.nix
+    ../home/programs/lact.nix
+    ../home/programs/zsh.nix
   ];
   programs.git = {
     enable = true;

@@ -1,9 +1,5 @@
 { config, pkgs, username, ... }:
 {
-  imports = [
-    ./programs/lact.nix
-    ./programs/zsh.nix
-  ];
   programs.home-manager.enable = true;
   home = {
     inherit username;
