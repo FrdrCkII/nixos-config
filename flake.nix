@@ -32,11 +32,11 @@
     nixosConfigurations = {
       FrdrCkII = 
       let
-        inherit system;
         username = "FrdrCkII";
         specialArgs = { inherit username; };
       in
       nixpkgs.lib.nixosSystem {
+        inherit system;
         inherit specialArgs;
         modules = [
           ./flake/_${username}/nixos.nix
