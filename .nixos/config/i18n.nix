@@ -22,7 +22,7 @@
       noto-fonts-emoji
       noto-fonts-cjk-sans
       material-design-icons
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      nerdfonts
     ];
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];
