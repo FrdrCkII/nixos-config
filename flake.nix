@@ -37,7 +37,7 @@
           };
         };
       in
-      nixpkgs.lib.nixosSystem {
+      pkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
           ./users/${username}/nixos.nix
