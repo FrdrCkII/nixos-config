@@ -6,6 +6,7 @@
     # ./programs/nginx.nix
     ./programs/steam.nix
     ./config/boot.nix
+    ./config/filesystem.nix
     ./config/hardware.nix
     ./config/i18n.nix
     ./config/kde.nix
