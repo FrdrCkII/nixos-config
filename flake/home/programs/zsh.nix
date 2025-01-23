@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 {
   home.Packages = with pkgs; [ zimfw ];
-  environment.shells = with pkgs; [ zsh ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
