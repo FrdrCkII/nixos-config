@@ -2,9 +2,6 @@
 {
   imports = [
     ../home/core.nix
-
-    ../home/rofi
-    ../home/shell
   ];
   programs.git = {
     enable = true;
