@@ -3,7 +3,7 @@
   nix.packages = [ pkgs.zsh-powerlevel10k ];
   programs.zsh = {
     enable = true;
-    dotDir = "../../../dotfile/zsh";
+    dotDir = "../../dotfile/zsh";
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;

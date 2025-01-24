@@ -1,7 +1,7 @@
 { config, pkgs, username, ... }:
 {
   imports = [
-    ./modules
+    ../modules
   ];
   programs.home-manager.enable = true;
   home = {
