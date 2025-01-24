@@ -5,7 +5,7 @@
     enable = true;
     dotDir = "../../dotfile/zsh";
     enableCompletion = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     ohMyZsh = {
