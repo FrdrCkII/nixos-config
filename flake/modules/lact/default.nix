@@ -5,15 +5,15 @@
     lactd = {
       Unit = {
         Description = "AMDGPU Control Daemon";
-        After = [ "multi-user.target" ];
+        After = "multi-user.target";
       };
       Service = {
-        ExecStart = "${pkgs.lact}/bin/lact daemon";
+        ExecStart = "lact daemon";
         Restart = "on-failure";
         Nice = "-10";
       };
       Install = {
-        WantedBy = [ "multi-user.target" ];
+        WantedBy = "multi-user.target";
       };
     };
   };
