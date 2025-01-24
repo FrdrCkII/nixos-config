@@ -15,6 +15,8 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@
@@ -23,6 +25,7 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
+    nur,
     ...
   }:
   let
@@ -49,6 +52,8 @@
               users.${username} = import ./flake/_${username}/home.nix;
             };
           }
+          nur.modules.nixos.default
+          nur.legacyPackages."${system}".repos.iopq.modules.xraya
         ];
       };
     };

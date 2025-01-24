@@ -33,8 +33,4 @@
       emoji = ["Noto Color Emoji"];
     };
   };
-  console = {
-    font = "Noto Serif";
-    keyMap = "us";
-  };
 }
