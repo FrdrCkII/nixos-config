@@ -15,7 +15,7 @@
       motrix
 
       wineWowPackages.unstableFull
-      winetricks
+      winetricks wine-fonts
     ];
   };
 }
