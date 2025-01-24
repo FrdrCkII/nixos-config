@@ -8,11 +8,11 @@
     ./config/i18n.nix
     ./config/kde.nix
     ./config/nix.nix
-    ./other/amdgpu.nix
-    ./other/caddy.nix
-    ./other/clash.nix
-    ./other/steam.nix
-    ./other/zsh.nix
+    ./modules/amdgpu.nix
+    ./modules/caddy.nix
+    ./modules/clash.nix
+    ./modules/steam.nix
+    ./modules/zsh.nix
   ];
   environment.systemPackages = with pkgs; [ vim wget git ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
