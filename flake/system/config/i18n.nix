@@ -36,5 +36,5 @@
   console = {
     font = "Noto Serif";
     keyMap = "us";
-  }
+  };
 }
