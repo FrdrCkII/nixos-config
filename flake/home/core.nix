@@ -14,8 +14,8 @@
       thunderbird
       motrix
 
-      wineWowPackages.unstableFull
-      winetricks wine-fonts
+      winePackages.unstableFull
+      winetricks winePackages.fonts
     ];
   };
 }
