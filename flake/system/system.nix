@@ -11,6 +11,8 @@
     ./modules/caddy.nix
     ./modules/clash.nix
     ./modules/steam.nix
+    ./modules/lact.nix
+    ./modules/zsh.nix
   ];
   environment.systemPackages = with pkgs; [ vim wget git ];
   boot.kernelPackages = pkgs.linuxPackages_zen;

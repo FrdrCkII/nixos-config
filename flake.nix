@@ -1,33 +1,29 @@
 {
   description = "Frederick's NixOS Flake";
 
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Stable
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
+    # HomeManager
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # NUR
+    nur = {
+      url = "github:nix-community/NUR";
+    };
   };
 
-  outputs = inputs@
-  {
+  outputs = {
     self,
     nixpkgs,
     nixpkgs-stable,
     home-manager,
     nur,
     ...
-  }:
+  }@inputs:
   let
     system = "x86_64-linux";
   in
