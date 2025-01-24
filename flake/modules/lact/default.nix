@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  nix.Packages = with pkgs; [ lact ];
+  home.packages = with pkgs; [ lact ];
   systemd.user.services = {
     lactd = {
       wantedBy = [ "multi-user.target" ];

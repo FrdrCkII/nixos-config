@@ -1,6 +1,6 @@
 { config, pkgs, lib, username, ... }:
 {
-  nix.packages = [ pkgs.zsh-powerlevel10k ];
+  home.packages = [ pkgs.zsh-powerlevel10k ];
   programs.zsh = {
     enable = true;
     dotDir = "../../dotfile/zsh";
