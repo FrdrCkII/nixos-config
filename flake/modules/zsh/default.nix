@@ -1,6 +1,9 @@
 { config, pkgs, lib, username, ... }:
 {
-  home.packages = [ pkgs.zsh-powerlevel10k ];
+  home.packages = with pkgs; [
+    zsh zimfw
+    zsh-powerlevel10k
+  ];
   programs.zsh = {
     enable = true;
     dotDir = "../../dotfile/zsh";
@@ -8,9 +11,5 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-    };
   };
 }
