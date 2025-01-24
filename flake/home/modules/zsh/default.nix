@@ -1,11 +1,9 @@
 { config, pkgs, lib, username, ... }:
 {
-  environment.systemPackages = with pkgs; [ zsh-powerlevel10k ];
-  environment.pathsToLink = [ "/share/zsh" ];
-  environment.shells = with pkgs; [ zsh ];
-  users.users.${username}.shell = pkgs.zsh;
+  nix.packages = [ pkgs.zsh-powerlevel10k ];
   programs.zsh = {
     enable = true;
+    dotDir = "../../../dotfile/zsh";
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;

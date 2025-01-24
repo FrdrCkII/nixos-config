@@ -1,5 +1,8 @@
 { config, pkgs, username, ... }:
 {
+  imports = [
+    ./modules
+  ];
   programs.home-manager.enable = true;
   home = {
     inherit username;
