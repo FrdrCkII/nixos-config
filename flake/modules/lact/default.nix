@@ -3,13 +3,17 @@
   home.packages = with pkgs; [ lact ];
   systemd.user.services = {
     lactd = {
-      wantedBy = [ "multi-user.target" ];
-      after = [ "multi-user.target" ];
-      description = "AMDGPU Control Daemon";
-      serviceConfig = {
-        ExecStart = ''${pkgs.lact}/bin/lact daemon'';
-        Restart = ''on-failure'';
-        Nice = ''-10'';
+      Unit = {
+        Description = "AMDGPU Control Daemon";
+        After = [ "multi-user.target" ];
+      };
+      Service = {
+        ExecStart = "${pkgs.lact}/bin/lact daemon";
+        Restart = "on-failure";
+        Nice = "-10";
+      };
+      Install = {
+        WantedBy = [ "multi-user.target" ];
       };
     };
   };
