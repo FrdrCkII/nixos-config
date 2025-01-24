@@ -13,9 +13,6 @@
       microsoft-edge
       thunderbird
       motrix
-
-      wineWowPackages.unstableFull
-      winetricks wineWowPackages.fonts
     ];
   };
 }
