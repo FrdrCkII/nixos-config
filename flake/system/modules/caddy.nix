@@ -20,7 +20,7 @@
     /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunity.key
     /data/.tools/steamcommunity_302/SteamDeck_302/steamcommunityCA.pem
   ];
-  networking.extraHosts = "
+  networking.extraHosts = ''
     127.0.0.1 steamcommunity.com
     127.0.0.1 www.steamcommunity.com
     127.0.0.1 store.steampowered.com
@@ -102,5 +102,5 @@
     127.0.0.1 steamcloud-sydney.storage.googleapis.com
     127.0.0.1 steamcloud-taiwan.storage.googleapis.com
     127.0.0.1 steamcloud-eu.storage.googleapis.com
-  ";
+  '';
 }
