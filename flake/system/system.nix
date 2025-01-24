@@ -13,6 +13,7 @@
     ./modules/steam.nix
     ./modules/lact.nix
     ./modules/zsh.nix
+    ./modules/AUR.nix
   ];
   environment.systemPackages = with pkgs; [ vim wget git ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
