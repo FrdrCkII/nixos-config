@@ -4,7 +4,7 @@
     steam-run
     gamescope
     mangohud
-    proton-ge-bin-GE-Proton9
+    proton-ge-bin
   ];
   programs = {
     steam = {
