@@ -6,7 +6,7 @@
   ];
   programs.zsh = {
     enable = true;
-    dotDir = "./dotfile/";
+    # dotDir = "./dotfile/";
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
