@@ -17,5 +17,8 @@
         configurationName = "NixOS";
       };
     };
+    kernelParams = [
+      "nowatchdog"
+    ];
   };
 }
