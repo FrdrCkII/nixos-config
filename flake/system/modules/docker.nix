@@ -7,7 +7,7 @@
     storageDriver = "btrfs";
     daemon.settings = {
       "registry-mirrors" = [
-        "https://docker.mirrors.ustc.edu.cn",
+        "https://docker.mirrors.ustc.edu.cn"
         "https://registry.docker-cn.com"
       ];
     };
