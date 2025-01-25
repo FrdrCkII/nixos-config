@@ -3,6 +3,8 @@
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.extraLocaleSettings = {
+    LANGUAGE = "zh_CN";
+    LANG = "zh_CN.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     LC_NUMERIC = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
