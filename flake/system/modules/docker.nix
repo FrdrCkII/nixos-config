@@ -4,6 +4,7 @@
   users.users.${username}.extraGroups = [ "docker" ];
   virtualisation.docker = {
     enable = true;
+    enableOnBoot = true;
     storageDriver = "btrfs";
     daemon.settings = {
       "registry-mirrors" = [
