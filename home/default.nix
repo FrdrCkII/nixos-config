@@ -10,11 +10,6 @@
   ...
 }: let 
   home-packages = with pkgs;[
-    nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
-    nur.repos.novel2430.wechat-universal-bwrap
-    nur.repos.xddxdd.baidunetdisk
-    nur.repos.xddxdd.dingtalk
-    nur.repos.xddxdd.qq
   ]
   ++ opt-config.HomePackages;
 in {
