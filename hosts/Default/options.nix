@@ -6,5 +6,6 @@
     gitmail = "c2h5oc2h4@outlook.com";
     gitbranch = "main";
     gpu-type = [ "amd" ];
+    desktop = [ "kde" ];
   };
 }
