@@ -16,7 +16,8 @@
     HomePackages = with pkgs; [
       fastfetch
       vscode
-      # microsoft-edge
+      microsoft-edge
+      thunderbird
       motrix
       wine
     ];
