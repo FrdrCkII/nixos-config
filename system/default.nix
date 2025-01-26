@@ -11,9 +11,9 @@
 }:
 {
   imports = [
-    ../flakes/hosts/${hostname}/hardware-configuration.nix
-    ./flakes/hosts/${hostname}/filesystem.nix
-    ./flakes/hosts/${hostname}/system.nix
+    ../hosts/${hostname}/hardware-configuration.nix
+    ../hosts/${hostname}/filesystem.nix
+    ../hosts/${hostname}/system.nix
     ./packages.nix
     ./config/boot.nix
     ./config/hardware.nix
