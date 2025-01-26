@@ -1,8 +1,18 @@
-{pkgs, ...}:
 {
-  environment.systemPackages = with pkgs; [
+  lib,
+  pkgs,
+  config,
+  allowed-unfree-packages,
+  allowed-insecure-packages,
+  opt-config,
+  hostname,
+  options,
+  ...
+}: let
+  system-packages = with pkgs; [
     vim wget git
-    yazi fastfetch
-    zip unzip p7zip
-  ];
+  ]
+  ++ opt-config.SystemPackages;
+in {
+  environment.systemPackages = SystemPackages;
 }

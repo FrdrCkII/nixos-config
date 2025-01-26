@@ -7,5 +7,17 @@
     gitbranch = "main";
     gpu-type = [ "amd" ];
     desktop = [ "kde" ];
+
+    SystemPackages = with pkgs; [
+      fastfetch
+      yazi
+      zip
+      unzip
+      p7zip
+    ];
+    HomePackages = with pkgs; [
+      vscode
+      microsoft-edge
+    ];
   };
 }

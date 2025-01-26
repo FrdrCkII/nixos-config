@@ -8,19 +8,16 @@
   hostname,
   options,
   ...
-}:
-{
+}: let 
+  home-packages = with pkgs;[
+  ]
+  ++ opt-config.HomePackages;
+in {
   programs.home-manager.enable = true;
   home = {
     username = "${opt-config.username}";
     homeDirectory = "/home/${opt-config.username}";
     stateVersion = "25.05";
-    packages = with pkgs; [
-      lact zsh
-      vscode
-      microsoft-edge
-      thunderbird
-      motrix
-    ];
+    packages = home-packages;
   };
 }
