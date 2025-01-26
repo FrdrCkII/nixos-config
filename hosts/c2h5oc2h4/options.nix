@@ -9,15 +9,16 @@
     desktop = [ "kde" ];
 
     SystemPackages = with pkgs; [
-      fastfetch
       yazi
-      zip
-      unzip
+      zip unzip
+      rar unrar
       p7zip
     ];
     HomePackages = with pkgs; [
+      fastfetch
       vscode
       microsoft-edge
+      motrix
     ];
   };
 }
