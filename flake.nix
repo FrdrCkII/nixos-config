@@ -57,7 +57,7 @@
         ({
           nixpkgs.overlays = [
             (final: prev: {
-              unstable = unstable-pkgs;
+              stable = stable-pkgs;
             })
           ];
         })
