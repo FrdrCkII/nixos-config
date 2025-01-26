@@ -1,7 +1,7 @@
 {
   description = "Frederick's NixOS Flake";
 
-  outputs = inputs: import ./flakes inputs;
+  outputs = import ./flakes;
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
