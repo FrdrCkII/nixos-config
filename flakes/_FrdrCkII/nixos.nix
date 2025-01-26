@@ -1,7 +1,7 @@
 { username, ... }:
 {
   imports = [
-    ../system/system.nix
+    ../../modules/system/system.nix
   ];
   users.users.${username} = {
     isNormalUser = true;

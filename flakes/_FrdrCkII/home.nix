@@ -1,7 +1,7 @@
 { username, ... }:
 {
   imports = [
-    ../home/core.nix
+    ../../modules/home/core.nix
   ];
   programs.git = {
     enable = true;
