@@ -13,6 +13,7 @@ rec {
     "steam-original"
     "steam-unwrapped"
     "microsoft-edge"
+    "vscode"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [
