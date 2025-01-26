@@ -18,7 +18,7 @@
   hosts-conf = import ./hosts-conf.nix {
     inherit pkg-settings;
   };
-  system-gen = with pkg-settings; nixpkgs.lib.nixosSystem {
+  system-gen = {host-conf}: with pkg-settings; nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = {
       inherit allowed-unfree-packages;
