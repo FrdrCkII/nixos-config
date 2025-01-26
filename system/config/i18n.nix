@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-  services.ntp.enable = true;
-  networking.timeServers = options.networking.timeServers.default ++ [ "tw.ntp.org.cn" ];
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.extraLocaleSettings = {
