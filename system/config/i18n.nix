@@ -3,9 +3,8 @@
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.extraLocaleSettings = {
-    LANGUAGE = "zh_CN";
     LANG = "zh_CN.UTF-8";
-    LC_CTYPE = "en_US.UTF-8";
+    LC_CTYPE = "zh_CN.UTF-8";
     LC_NUMERIC = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
     LC_COLLATE = "zh_CN.UTF-8";
@@ -17,6 +16,7 @@
     LC_TELEPHONE = "zh_CN.UTF-8";
     LC_MEASUREMENT = "zh_CN.UTF-8";
     LC_IDENTIFICATION = "zh_CN.UTF-8";
+    LC_ALL = "zh_CN.UTF-8";
   };
   fonts = lib.mkForce {
     enableDefaultPackages = false;
