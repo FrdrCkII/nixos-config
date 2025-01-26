@@ -4,7 +4,8 @@
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.extraLocaleSettings = {
     LANG = "zh_CN.UTF-8";
-    LC_CTYPE = "zh_CN.UTF-8";
+    LANGUAGE = "zh_CN:en_US";
+    LC_CTYPE = "en_US.UTF-8";
     LC_NUMERIC = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
     LC_COLLATE = "zh_CN.UTF-8";
