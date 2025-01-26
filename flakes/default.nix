@@ -52,7 +52,7 @@
   };
 in {
   nixosConfigurations = with hosts-conf;{
-    "${Default-conf.name}" = system-gen { host-conf = Default; };
+    "${Default.name}" = system-gen { host-conf = Default; };
     "${c2h5oc2h4.name}" = system-gen { host-conf = c2h5oc2h4; };
   };
 }
