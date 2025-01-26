@@ -36,12 +36,12 @@
         ];
       })
       # System Configuration
-      ./user/${host-conf.config.username}/config.nix
+      ../user/${host-conf.config.username}/config.nix
       # Home Manager
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.${host-conf.config.username} = import ./user/${host-conf.config.username}/home.nix;
+        home-manager.users.${host-conf.config.username} = import ../user/${host-conf.config.username}/home.nix;
         home-manager.extraSpecialArgs = {
           inherit inputs;
           opt-config = host-conf.config;
