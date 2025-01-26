@@ -31,14 +31,14 @@
     ...
   } @inputs: let
     system = "x86_64-linux";
-    pkg-settings = import ./pkgs-settings.nix {
+    pkg-settings = import ./flakes/pkgs-settings.nix {
       inherit system;
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nixpkgs-unstable;
       inherit nur;
     };
-    hosts-conf = import ./hosts-conf.nix {
+    hosts-conf = import ./flakes/hosts-conf.nix {
       inherit pkg-settings;
     };
     system-gen = {host-conf}: with pkg-settings; nixpkgs.lib.nixosSystem {
@@ -59,12 +59,12 @@
           ];
         })
         # System Configuration
-        ../user/${host-conf.config.username}/config.nix
+        ./user/${host-conf.config.username}/config.nix
         # Home Manager
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.${host-conf.config.username} = import ../user/${host-conf.config.username}/home.nix;
+          home-manager.users.${host-conf.config.username} = import ./user/${host-conf.config.username}/home.nix;
           home-manager.extraSpecialArgs = {
             inherit inputs;
             opt-config = host-conf.config;
