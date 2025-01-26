@@ -8,6 +8,9 @@
 rec {
   # Superset of the default unfree packages
   allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+    "nvidia-persistenced"
     "amdgpu-pro"
     "steam"
     "steam-original"
