@@ -6,8 +6,9 @@
     ./config/filesystem.nix
     ./config/hardware.nix
     ./config/i18n.nix
-    ./config/kde.nix
     ./config/nix.nix
+    # ./config/kde.nix
+    ./config/xfce.nix
     ./modules/caddy.nix
     ./modules/clash.nix
     ./modules/docker.nix
