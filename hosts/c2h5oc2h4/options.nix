@@ -15,6 +15,7 @@
     ];
     HomePackages = with pkgs; [
       fastfetch
+      libreoffice
       vscode
       microsoft-edge
       thunderbird
