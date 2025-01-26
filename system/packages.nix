@@ -14,5 +14,5 @@
   ]
   ++ opt-config.SystemPackages;
 in {
-  environment.systemPackages = SystemPackages;
+  environment.systemPackages = system-packages;
 }
