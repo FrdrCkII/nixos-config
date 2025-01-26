@@ -31,7 +31,7 @@
   } @inputs: let
     system = "x86_64-linux";
     # Packages Setting
-    pkg-settings = import ./settings/pkgs-settings.nix {
+    pkg-settings = import ./flakes/pkgs-settings.nix {
       inherit system;
       inherit nixpkgs;
       inherit nixpkgs-stable;
@@ -39,7 +39,7 @@
       inherit nur;
     };
     # Host Config
-    hosts-conf = import ./settings/hosts-conf.nix { inherit pkg-settings; };
+    hosts-conf = import ./flakes/hosts-conf.nix { inherit pkg-settings; };
     # Generate Function
     system-gen = {host-conf}: with pkg-settings; nixpkgs.lib.nixosSystem {
       inherit system;
