@@ -1,7 +1,7 @@
 { opt-config, ... }:
 {
   imports = [
-    ../system
+    ../../system
   ];
   users.users.${opt-config.username} = {
     isNormalUser = true;
