@@ -1,9 +1,9 @@
-{ username, ... }:
+{ opt-config, ... }:
 {
   imports = [
-    ../../modules/system/system.nix
+    ../system
   ];
-  users.users.${username} = {
+  users.users.${opt-config.username} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
   };

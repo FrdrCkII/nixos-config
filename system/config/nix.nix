@@ -1,8 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, opt-config, ... }:
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
   nix.gc = lib.mkDefault {
     automatic = true;
     dates = "weekly";
@@ -11,7 +8,7 @@
   nix.settings = {
     auto-optimise-store = true;
     builders-use-substitutes = true;
-    trusted-users = [ "root" "FrdrCkII" ];
+    trusted-users = [ "${opt-config.username}" ];
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
