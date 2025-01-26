@@ -1,7 +1,7 @@
 { opt-config, ... }:
 {
   imports = [
-    ../home
+    ../../home
   ];
   programs.git = {
     enable = true;
