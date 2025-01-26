@@ -32,11 +32,11 @@
     system = "x86_64-linux";
     # Packages Setting
     pkg-settings = import ./settings/pkgs-settings.nix {
-      inherit nixpkgs;
       inherit system;
+      inherit nixpkgs;
+      inherit nixpkgs-stable;
       inherit nixpkgs-unstable;
       inherit nur;
-      inherit nixpkgs-2405;
     };
     # Host Config
     hosts-conf = import ./settings/hosts-conf.nix { inherit pkg-settings; };
