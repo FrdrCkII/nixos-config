@@ -34,8 +34,7 @@ rec {
   # Unstable Brach Packages
   unstable-pkgs = import nixpkgs-unstable {
     inherit system;
-    # config.allowUnfreePredicate = allowed-unfree-packages;
-    config.allowUnfree = true;
+    config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
     overlays = [ nur.overlay ];
   };
