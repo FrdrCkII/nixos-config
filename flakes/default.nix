@@ -25,7 +25,6 @@
       inherit allowed-insecure-packages;
       opt-config = host-conf.config;
       hostname = host-conf.name;
-      inherit custom-pkgs;
     };
     modules = [
       { nixpkgs.overlays = [ nur.overlay ]; }
