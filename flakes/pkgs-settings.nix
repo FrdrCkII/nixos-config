@@ -28,7 +28,8 @@ rec {
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [
-    
+    "electron-11.5.0"
+    "openssl-1.1.1w"
   ];
   # Stable Brach Packages
   stable-pkgs = import nixpkgs-stable {
