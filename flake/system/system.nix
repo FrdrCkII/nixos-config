@@ -8,7 +8,6 @@
     ./config/i18n.nix
     ./config/nix.nix
     ./config/kde.nix
-    ./config/xfce.nix
     ./modules/caddy.nix
     ./modules/clash.nix
     ./modules/docker.nix
