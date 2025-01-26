@@ -1,10 +1,6 @@
 {
-  self,
-  nixpkgs,
-  nixpkgs-stable,
-  nixpkgs-unstable,
-  home-manager,
-  nur,
+  lib,
+  inputs,
   ...
 } @ inputs: let
   system = "x86_64-linux";
