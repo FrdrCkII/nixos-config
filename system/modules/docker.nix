@@ -1,7 +1,7 @@
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, opt-config, ... }:
 {
   environment.systemPackages = [ pkgs.distrobox ];
-  users.users.${username}.extraGroups = [ "docker" ];
+  users.users.${opt-config.username}.extraGroups = [ "docker" ];
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;

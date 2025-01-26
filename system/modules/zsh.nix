@@ -1,11 +1,11 @@
-{ config, pkgs, lib, username, ... }:
+{ config, pkgs, lib, opt-config, ... }:
 {
   environment.systemPackages = with pkgs; [
     zsh
     thefuck
     zsh-powerlevel10k
   ];
-  users.users.${username}.shell = pkgs.zsh;
+  users.users.${opt-config.username}.shell = pkgs.zsh;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
