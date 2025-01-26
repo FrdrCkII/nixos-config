@@ -15,6 +15,8 @@ rec {
     "steam"
     "steam-original"
     "steam-unwrapped"
+    "steam-run"
+    "xow_dongle-firmware"
     "microsoft-edge"
     "vscode"
   ];
