@@ -11,7 +11,6 @@
     SystemPackages = with pkgs; [
       yazi
       zip unzip
-      rar unrar
       p7zip
     ];
     HomePackages = with pkgs; [
@@ -19,6 +18,7 @@
       vscode
       microsoft-edge
       motrix
+      wine
     ];
   };
 }
