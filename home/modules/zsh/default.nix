@@ -1,9 +1,10 @@
 { config, pkgs, lib, opt-config, ... }:
 {
-  home.Packages = with pkgs; [
+  home.packages = with pkgs; [
     zsh
     zimfw
   ];
+  # home.file.".config/zsh/.zshrc".source = ./.zshrc;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
