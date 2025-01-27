@@ -9,18 +9,22 @@
     desktop = [ "kde" ];
 
     SystemPackages = with pkgs; [
-      yazi
+      activate-linux
       zip unzip
       p7zip
+      yazi
     ];
     HomePackages = with pkgs; [
       fastfetch
+      btrfs-assistant
       libreoffice
       vscode
       microsoft-edge
       thunderbird
       motrix
       wine
+      distrobox
+      prismlauncher
     ];
   };
 }
