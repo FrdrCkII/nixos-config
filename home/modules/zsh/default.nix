@@ -5,7 +5,7 @@
     zimfw
   ];
   home.file.".config/zsh/.zimrc".source = ./zimrc;
-  home.file.".config/zsh/zimfw/zimfw.zsh".source = ~/.config/zsh/plugins/zimfw/zimfw.zsh;
+  home.file.".config/zsh/zimfw/zimfw.zsh".source = /home/${opt-config.username}/.config/zsh/plugins/zimfw/zimfw.zsh;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
