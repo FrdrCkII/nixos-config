@@ -24,7 +24,6 @@
     ./modules/docker.nix
     ./modules/steam.nix
     ./modules/lact.nix
-    ./modules/zsh.nix
     ./modules/fhs.nix
   ]++
   lib.optionals (builtins.elem "nvidia" opt-config.gpu-type) [

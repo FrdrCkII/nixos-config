@@ -6,5 +6,6 @@
   users.users.${opt-config.username} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 }

@@ -13,6 +13,9 @@
   ]
   ++ opt-config.HomePackages;
 in {
+  imports = [
+    ./modules/zsh
+  ];
   programs.home-manager.enable = true;
   home = {
     username = "${opt-config.username}";
