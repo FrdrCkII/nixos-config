@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 {
+  loader.efi.efiSysMountPoint = mkForce "/efi";
   fileSystems = {
     "/".options = [ "noatime" "autodefrag" "compress=zstd:15" ];
     "/nix".options = [ "noatime" "autodefrag" "compress=zstd:15" ];
