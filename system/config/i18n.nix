@@ -40,5 +40,5 @@
       emoji = ["Noto Color Emoji"];
     };
   };
-  console.font = "${pkgs.noto-fonts-cjk-sans}/share/fonts/opentype/noto-cjk/NotoSansCJK-VF.otf.ttc";
+  console.font = "${pkgs.kbd}/share/consolefonts/solar24x32.psfu.gz";
 }
