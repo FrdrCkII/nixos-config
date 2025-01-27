@@ -1,4 +1,4 @@
-{ pkgs, opt-config, ... }:
+{ opt-config, ... }:
 {
   imports = [
     ../../system
@@ -6,6 +6,5 @@
   users.users.${opt-config.username} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
   };
 }
