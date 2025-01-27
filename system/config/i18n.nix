@@ -40,5 +40,5 @@
       emoji = ["Noto Color Emoji"];
     };
   };
-  console.font = "${pkgs.kbd}/share/consolefonts/solar24x32.psfu.gz";
+  console.font = "Lat2-Terminus16";
 }
