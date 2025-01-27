@@ -7,7 +7,7 @@
       zfs = lib.mkForce false;
     };
     loader = {
-      efi.efiSysMountPoint = mkDefault "/boot";
+      efi.efiSysMountPoint = lib.mkDefault "/boot";
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
