@@ -12,7 +12,7 @@
         ]
       );
       profile = "export FHS=1";
-      runScript = "bash";
+      runScript = "zsh";
       extraOutputsToInstall = ["dev"];
     }))
   ];
