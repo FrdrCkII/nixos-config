@@ -15,6 +15,6 @@
         name = "zimfw";
         src = pkgs.zimfw;
       }
-    ]
+    ];
   };
 }
