@@ -13,9 +13,7 @@
     plugins = [
       {
         name = "zimfw";
-        src = pkgs.zimfw {
-          
-        };
+        src = pkgs.zimfw;
       }
     ]
   };
