@@ -18,14 +18,14 @@
       }
     ];
     initExtra = let
-      ZIM_CONFIG_FILE = "~/.config/zsh/.zimrc";
+      ZIM_CONFIG_FILE = "~/.config/zsh";
       ZIM_HOME = "~/.config/zsh/plugins/zimfw";
     in lib.mkMerge [
       (''
-        ZIM_CONFIG_FILE=${ZIM_CONFIG_FILE}
+        ZIM_CONFIG_FILE=${ZIM_CONFIG_FILE}/.zimrc
         ZIM_HOME=${ZIM_HOME}
         # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
-        if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE} ]]; then
+        if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE}/.zimrc ]]; then
           source ${ZIM_HOME}/zimfw.zsh init -q
         fi
         # Initialize modules.
