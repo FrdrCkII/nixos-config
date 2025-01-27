@@ -17,9 +17,11 @@
         src = pkgs.zimfw;
       }
     ];
-    initExtra = [
-      "ZIM_CONFIG_FILE=~/.config/zsh/.zimrc"
-      "ZIM_HOME=~/.zim"
+    initExtra = lib.mkMerge [
+      (''
+        ZIM_CONFIG_FILE=~/.config/zsh/.zimrc
+        ZIM_HOME=~/.zim
+      '')
     ];
   };
 }
