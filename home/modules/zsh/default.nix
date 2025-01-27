@@ -8,6 +8,7 @@
   home.file.".config/zsh/zimfw/zimfw.zsh".source = /home/${opt-config.username}/.config/zsh/plugins/zimfw/zimfw.zsh;
   programs.zsh = {
     enable = true;
+    enableCompletion = false;
     dotDir = ".config/zsh";
     plugins = [
       {
