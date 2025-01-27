@@ -5,13 +5,19 @@
     zimfw
   ];
   home.file.".config/zsh/.zimrc".source = ./zimrc;
-  home.file.".config/zsh/zimfw/zimfw.zsh".source = ${pkgs.zimfw}/zimfw.zsh;
+  home.file.".config/zsh/zimfw/zimfw.zsh".source = ~/.config/zsh/plugins/zimfw/zimfw.zsh;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
+    plugins = [
+      {
+        name = "zimfw";
+        src = pkgs.zimfw;
+      }
+    ];
     initExtra = let
       ZIM_CONFIG_FILE = "~/.config/zsh/.zimrc";
       ZIM_HOME = "~/.config/zsh/zimfw";
