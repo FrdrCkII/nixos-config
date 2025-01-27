@@ -40,5 +40,5 @@
       emoji = ["Noto Color Emoji"];
     };
   };
-  console.font = "Noto Serif";
+  console.font = "noto-fonts-cjk-sans";
 }
