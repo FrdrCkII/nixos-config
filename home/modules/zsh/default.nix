@@ -9,6 +9,7 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    programs.zsh.dotDir = ".config/zsh";
     plugins = [
       {
         name = "zimfw";
