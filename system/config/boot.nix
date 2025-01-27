@@ -18,6 +18,9 @@
       };
     };
     kernelParams = [
+      "quiet"
+      "splash"
+      "loglevel=5"
       "nowatchdog"
     ];
   };
