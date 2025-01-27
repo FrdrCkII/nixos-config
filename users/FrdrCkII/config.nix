@@ -1,4 +1,4 @@
-{ opt-config, ... }:
+{ pkgs, opt-config, ... }:
 {
   imports = [
     ../../system
