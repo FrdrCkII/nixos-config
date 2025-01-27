@@ -4,7 +4,6 @@
     zsh
     zimfw
   ];
-  users.users.${opt-config.username}.
   programs.zsh = {
     enable = true;
     enableCompletion = true;
